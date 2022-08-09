@@ -3,6 +3,7 @@ package com.devsuperior.bds02.servicies;
 import com.devsuperior.bds02.dto.EventDTO;
 import com.devsuperior.bds02.entities.Event;
 import com.devsuperior.bds02.repositories.EventRepository;
+import com.devsuperior.bds02.servicies.exceptions.ResourceNotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -23,7 +24,7 @@ public class EventService {
         repository.save(entity);
         return  new EventDTO(entity);
        } catch (EntityNotFoundException e) {
-           throw ResourceNotFoundException("Resource not found");
+           throw new ResourceNotFoundException("Resource not found");
        }
     }
 }
