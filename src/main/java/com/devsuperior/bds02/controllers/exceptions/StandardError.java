@@ -10,7 +10,7 @@ public class StandardError implements Serializable {
     private String message;
     private String path;
 
-    public StandardError(Instant now, int value, String resource_not_found, String message, String requestURI) {
+    public StandardError() {
     }
 
     public Instant getTimestamp() {
